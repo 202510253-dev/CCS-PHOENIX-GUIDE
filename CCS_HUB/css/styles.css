@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins-Bold, 'Poppins', Arial, 'Kagitingan-Bold';
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+@font-face {
+    src: url(../Kagitingan-Bold.otf);
+    font-family: Kagitingan-Bold;
+}
+
+@font-face {
+    src: url(../Poppins-Bold.ttf);
+    font-family: Poppins-Bold;
+}
+
+@font-face {
+    font-family: Poppins-ExtraBold;
+    src: url(../Poppins-ExtraBold.ttf);
+}
+
+/*NAVIGATION BAR*/
+.sticky-nav {
+    font-family: Poppins-Bold;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 4%;
+    z-index: 1000;
+    background: rgba(20, 49, 1, 0.151);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.103);
+    letter-spacing: 1px;
+}
+
+.nav-branding {
+    display: flex;
+    align-items: left;
+    gap: 15px;
+}
+
+#ccslogo {
+    margin: 0px;
+    height: 50px;
+    width: auto;
+    padding: auto;
+}
+
+#ccslogo:hover {
+    height: 53px;
+    width: auto;
+    padding: auto;
+    margin: 0px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+}
+
+.header-title {
+    font-family: 'Kagitingan-Bold';
+    margin-top: 10px;
+    color: hwb(0 100% 0%);
+    font-size: 1.5rem;
+    margin: -10;
+    padding: 0;
+    letter-spacing: 3px;
+    line-height: 1px;
+    text-align: left;
+}
+
+.header-title:hover {
+    color: hwb(17 4% 0%);
+}
+
+.header-description {
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    gap: 1px;
+    text-align: left;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.header-title,
+.header-description {
+    margin: 0;
+    padding: 0;
+    line-height: 0.6;
+}
+
+.nav-menu {
+    font-family: Poppins-Bold;
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-list {
+    font-family: Poppins-Bold;
+    text-decoration: none;
+    font-family: 'Poppins';
+    color: white;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.nav-list:hover {
+    font-family: Poppins-ExtaBold;
+    color: #ff8e0d;
+    font-size: 1em;
+    font-weight: bolder;
+    text-shadow: 0 4px 30px rgba(155, 65, 6, 0.562);
+}
+
+body {
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* --- HEADER NG WEBSITE--- */
+#home {
+    min-height: 100vh;
+    background: linear-gradient(rgba(27, 68, 4, 0.6), rgb(5, 54, 3)), url(GC1.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0 10%;
+    text-align: center;
+    align-content: center;
+}
+
+.hero-inner {
+    display: grid;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    max-width: 1000%;
+    margin: 0 auto;
+}
+
+/* Animated badge that pulses */
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border: 1px solid rgba(255, 142, 13, 0.4);
+    border-radius: 50px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    background: rgba(255, 142, 13, 0.07);
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(1.4);
+    }
+}
+
+.firstpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    max-width: 1500px;
+}
+
+.onetitle,
+.onedescription {
+    margin: 0 !important;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.onetitle {
+    font-size: 9rem;
+    font-family: 'Kagitingan-Bold';
+    color: white;
+    letter-spacing: 2px;
+    border-bottom: -10px;
+    align-content: center;
+    animation-duration: 2s ease-out forwards;
+    animation-name: Slidedown;
+    margin: 0;
+}
+
+@keyframes Slidedown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.onedescription {
+    font-size: 1rem;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    
+}
+
+.onedescription:hover {
+    font-size: small;
+}
+
+.onetitle a,
+.onedescription a,
+.onebutton a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+    gap: 15px;
+    line-height: 1.6;
+}
+.invid {
+    opacity: 0.1;
+    color:#ffffff0e;
+}
+
+.oneparagraph {
+    font-family: Poppins-Bold;
+    font-style: normal;
+    font-weight:600 ;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.onebutton {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+
+}
+
+.onebutton a {
+    text-decoration: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.gotoroadmap {
+    background-color: transparent;
+    background: rgba(84, 196, 10, 0.123);
+    backdrop-filter: blur(15px);
+    color: #ffffff !important;
+}
+
+.gcwebsite {
+    background-color: transparent;
+    background: rgba(84, 196, 10, 0.123);
+    backdrop-filter: blur(15px);
+    color: #ffffff !important;
+}
+
+.gotoroadmap:hover {
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+    background: rgba(255, 136, 0, 0.603);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(209, 144, 2, 0.24);
+}
+
+.gcwebsite:hover {
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+    background: rgba(255, 136, 0, 0.603);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(209, 144, 2, 0.24);
+}
+
+/* CCS PROGRAM WEBSITE*/
+#gc {
+    min-height: 100vh;
+    background: linear-gradient(rgba(27, 68, 4, 0.6), rgb(5, 54, 3)), url(C:\Users\Mon\Downloads\CCS-PHOENIX-GUIDE-main\CCS_HUB\GC1.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10%;
+    text-align: left;
+}
+
+#ccs {
+    min-height: 100vh;
+    background: linear-gradient(rgba(27, 68, 4, 0.6), rgb(5, 54, 3)), url(C:\Users\Mon\Downloads\CCS-PHOENIX-GUIDE-main\CCS_HUB\GC1.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10%;
+    text-align: left;
+}
