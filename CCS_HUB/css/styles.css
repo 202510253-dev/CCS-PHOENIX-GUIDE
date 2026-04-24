@@ -1,3 +1,6 @@
+/* ============================== */
+/*          Reset & Base          */
+/* ============================== */
 * {
     margin: 0;
     padding: 0;
@@ -20,6 +23,22 @@ html {
     background-color: transparent;
 }
 
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ============================== */
+/*          FONTS SECTION         */
+/* ============================== */
+
 @font-face {
     src: url(../Kagitingan-Bold.otf);
     font-family: Kagitingan-Bold;
@@ -35,7 +54,10 @@ html {
     src: url(../Poppins-ExtraBold.ttf);
 }
 
-/*NAVIGATION BAR*/
+/* ============================== */
+/*         NAVIGATION BAR         */
+/* ============================== */
+
 .sticky-nav {
     font-family: Poppins-Bold;
     position: fixed;
@@ -112,11 +134,14 @@ html {
     line-height: 1.5;
 }
 
+
 .header-title {
     margin: 0;
     padding: 5;
     line-height: 0.9;
 }
+
+/* NAV LINK */
 
 .nav-menu {
     font-family: Poppins-Bold;
@@ -146,30 +171,29 @@ html {
     text-shadow: 0 4px 30px rgba(155, 65, 6, 0.562);
 }
 
-body {
-    color: #ffffff;
-    line-height: 1.6;
-    overflow-x: hidden;
-    background-color: transparent;
-}
+/* ============================== */
+/*         HOME SECTION           */
+/* ============================== */
 
-a {
-    text-decoration: none;
-}
-
-/* --- HEADER NG WEBSITE--- */
-.hero-inner {
-    display: grid;
-    gap: 20px;
+#home {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    background-image:
+        linear-gradient(rgba(4, 9, 30, 0.65), rgba(4, 4, 6, 0.75)),
+        url("../images/background-p2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    max-width: 1200px;
-    width: 100%;
-    max-width: 1000%;
-    margin: 0 auto;
+    gap: 20px;
 }
 
-/* Animated badge that pulses */
 .hero-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -177,21 +201,13 @@ a {
     padding: 6px 14px;
     border: 1px solid rgba(255, 142, 13, 0.4);
     border-radius: 50px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--accent);
     background: rgba(255, 142, 13, 0.07);
     text-transform: uppercase;
     margin-bottom: 22px;
-}
-
-.pulse-dot {
-    width: 0px;
-    height: 20px;
-    border-radius: 100%;
-    background: var(--accent);
-    animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
@@ -208,51 +224,21 @@ a {
     }
 }
 
-/*========First Page========*/
-
-.firstpage {
-    min-height: 100vh;
-    width: 100vw;
-    background-image:
-        linear-gradient(rgba(4, 9, 30, 0.65), rgba(4, 4, 6, 0.75)),
-        url("../images/GC1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    text-align: center;
-
-}
-
-.onedescription {
-    margin: 0 !important;
-    padding: 0;
-    line-height: 0.6;
-}
-
+/* Main title */
 .onetitle {
-    font-size: 6rem;
     font-family: 'Kagitingan-Bold';
-    color: white;
+    font-size: 6rem;
     letter-spacing: 1px;
-    border-bottom: -10px;
-    align-content: center;
-    animation-duration: 2s ease-out forwards;
-    animation-name: Slidedown;
     margin: 0;
     background: linear-gradient(135deg, #ffffff, #ff8e0d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: slideDown 1s ease-out forwards;
 }
 
-@keyframes Slidedown {
+@keyframes slideDown {
     from {
-        transform: translateY(-100%);
+        transform: translateY(-40px);
         opacity: 0;
     }
 
@@ -264,41 +250,28 @@ a {
 
 .onedescription {
     font-size: 1rem;
-    color: white;
-    letter-spacing: 1px;
     font-weight: 600;
-    margin-bottom: 25px;
-
-}
-
-.onedescription:hover {
-    font-size: 1rem;
-    padding: auto;
-    color: hwb(17 4% 0%);
-}
-
-.onetitle a,
-.onedescription a,
-.onebutton a {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
+    letter-spacing: 1px;
     color: white;
-    gap: 15px;
-    line-height: 1.6;
+    margin: 0;
+    line-height: 1;
 }
 
-.invid {
-    opacity: 0.1;
-    color: #ffffff0e;
+.onedescription a {
+    color: white;
+    transition: color 0.2s;
+}
+
+.onedescription a:hover {
+    color: #ff8e0d;
 }
 
 .oneparagraph {
-    font-family: Poppins-Bold;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.2rem;
-    line-height: 1.6;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.7;
 }
 
 .onebutton {
@@ -306,92 +279,178 @@ a {
     justify-content: center;
     gap: 15px;
     margin-top: 25px;
-
 }
 
 .onebutton a {
-    text-decoration: none;
     padding: 12px 25px;
     font-weight: bold;
     font-size: 0.85rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: all 0.3s ease;
     border-radius: 4px;
+    transition: all 0.3s ease;
     display: inline-block;
+    color: #ffffff;
 }
 
-.gotoroadmap {
-    background-color: transparent;
-    background: rgba(84, 196, 10, 0.123);
-    backdrop-filter: blur(15px);
-    color: #ffffff !important;
-}
-
+.gotoroadmap,
 .gcwebsite {
-    background-color: transparent;
-    background: rgba(84, 196, 10, 0.123);
+    background: rgba(84, 196, 10, 0.12);
     backdrop-filter: blur(15px);
-    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.gotoroadmap:hover {
-    background-color: transparent;
-    box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
-    background: rgba(255, 136, 0, 0.603);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0 4px 30px rgba(209, 144, 2, 0.24);
-}
-
+.gotoroadmap:hover,
 .gcwebsite:hover {
-    background-color: transparent;
-    box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
-    background: rgba(255, 136, 0, 0.603);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(255, 136, 0, 0.6);
     box-shadow: 0 4px 30px rgba(209, 144, 2, 0.24);
 }
 
 
-/* ====== CCS PROGRAM WEBSITE (2nd page) ====== */
-
-.firstpage,
-#gc {
-    background-image:
-        linear-gradient(rgba(4, 4, 6, 0.7), rgba(4, 9, 30, 0.7)),
-        url("../images/GC1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+/* ============================== */
+/*         SECOND PAGE            */
+/* ============================== */
 
 #gc {
+    position: relative;
     min-height: 100vh;
     width: 100vw;
     background-image:
-        linear-gradient(rgba(4, 9, 30, 0.65), rgba(4, 4, 6, 0.75)),
-        url("../images/GC1.jpg");
+        linear-gradient(rgba(4, 9, 30, 0.45), rgba(4, 4, 6, 0.65)),
+        url("../images/background-p2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-#ccs {
-    min-height: 100vh;
-    background: linear-gradient(rgba(27, 68, 4, 0.6), rgb(5, 54, 3)), url(C:\Users\Opriasa\Desktop\CCS_HUB\GC1.png);
-    background-size: cover;
-    background-position: center;
     background-attachment: fixed;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 10%;
-    text-align: left;
+    padding: 0 8%;
+}
+
+#gc::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(28, 78, 44, 0.55);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-inner-p2 {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-eyebrow-p2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border: 1px solid rgba(255, 142, 13, 0.4);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ff8e0d;
+    background: rgba(255, 142, 13, 0.07);
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    animation: pulse 2s ease-in-out infinite;
+
+}
+
+.hero-text-p2 {
+    height: 450px;
+    margin-left: -80px;
+}
+
+.pulse-dot-p2 {
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.twotitle {
+    font-family: 'Kagitingan-Bold';
+    font-size: 5rem;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+}
+
+.twotitle::after {
+    content: '';
+    display: block;
+    width: 900px;
+    height: 3px;
+    background: linear-gradient(to right, #ff8e0d, transparent);
+    margin-top: 5px;
+    margin-bottom: 3px;
+    border-radius: 2px;
+}
+
+.twotag {
+    font-style: italic;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.twodescription {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.twobutton {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.twobutton a {
+    padding: 11px 22px;
+    font-weight: bold;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.gotoroadmap2,
+.gcwebsite2 {
+    background: rgba(84, 196, 10, 0.12);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.gotoroadmap2:hover,
+.gcwebsite2:hover {
+    background: rgba(255, 136, 0, 0.6);
+    box-shadow: 0 4px 30px rgba(209, 144, 2, 0.24);
+}
+
+.aerial-2 {
+    height: 430px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    float: right;
+    margin: -450px;
+    margin-left: 950px;
+}
+
+.aerial-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
