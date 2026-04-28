@@ -1,6 +1,13 @@
 /* ============================== */
 /*          Reset & Base          */
 /* ============================== */
+:root {
+    --maroon: #6B0F1A;
+    --radius: 12px;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    --gold-lt: rgba(255, 200, 80, 0.85);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -180,7 +187,10 @@ a {
     min-height: 100vh;
     width: 100vw;
     background-image:
-        linear-gradient(rgba(4, 9, 30, 0.65), rgba(4, 4, 6, 0.75)),
+        linear-gradient(to bottom,
+            rgba(4, 9, 30, 0.85) 0%,
+            rgba(4, 9, 30, 0.65) 70%,
+            rgba(4, 9, 30, 0.2) 100%),
         url("../images/background-p2.jpg");
     background-size: cover;
     background-position: center;
@@ -192,6 +202,18 @@ a {
     align-items: center;
     text-align: center;
     gap: 20px;
+    padding: 120px 8% 80px 8%;
+}
+
+#home::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, rgba(4, 9, 30, 0.8));
+    pointer-events: none;
 }
 
 .hero-eyebrow {
@@ -224,7 +246,6 @@ a {
     }
 }
 
-/* Main title */
 .onetitle {
     font-family: 'Kagitingan-Bold';
     font-size: 6rem;
@@ -306,6 +327,92 @@ a {
     box-shadow: 0 4px 30px rgba(209, 144, 2, 0.24);
 }
 
+.scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 50px;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.scroll-line {
+    width: 5px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgb(255, 136, 0), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scaleY(0.6);
+    }
+}
+
+/* ============================== */
+/*        VIDEO SECTION           */
+/* ============================== */
+
+.vid-second {
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 8% 80px 8%;
+}
+
+/* The video */
+.vid-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.vid-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(4, 9, 30, 0.5) 0%,
+            rgba(14, 44, 24, 0.45) 50%,
+            rgba(28, 78, 44, 0.65) 100%);
+}
+
+.vid-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.vid-title {
+    font-family: 'Kagitingan-Bold';
+    font-size: 3.5rem;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    max-width: 1000px;
+}
+
+.vid-desc {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 10000px;
+}
 
 /* ============================== */
 /*         SECOND PAGE            */
@@ -313,42 +420,52 @@ a {
 
 #gc {
     position: relative;
-    min-height: 100vh;
+    min-height: 80vh;
     width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#gc,
+#ccs,
+#roadmap {
     background-image:
-        linear-gradient(rgba(4, 9, 30, 0.45), rgba(4, 4, 6, 0.65)),
-        url("../images/background-p2.jpg");
+        linear-gradient(to bottom,
+            rgba(28, 78, 44, 0.65) 0%,
+            rgba(28, 78, 44, 0.55) 50%,
+            rgba(4, 9, 30, 0.7) 100%),
+        url("../images/page2bg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 8%;
 }
 
 #gc::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgba(28, 78, 44, 0.55);
-    pointer-events: none;
-    z-index: 0;
+    display: none;
 }
 
 .hero-inner-p2 {
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .hero-eyebrow-p2 {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 6px 14px;
+    gap: 6px;
+    padding: 4px 10px;
     border: 1px solid rgba(255, 142, 13, 0.4);
-    border-radius: 50px;
+    border-radius: 40px;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -361,8 +478,9 @@ a {
 }
 
 .hero-text-p2 {
-    height: 450px;
-    margin-left: -80px;
+    flex: 0 0 300px;
+    min-width: 0px;
+    margin-right: 140px
 }
 
 .pulse-dot-p2 {
@@ -372,16 +490,19 @@ a {
 
 .twotitle {
     font-family: 'Kagitingan-Bold';
-    font-size: 5rem;
+    font-size: 3.6rem;
     color: #ffffff;
     letter-spacing: 2px;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    line-height: 1.1;
+    white-space: nowrap;
 }
 
 .twotitle::after {
     content: '';
     display: block;
-    width: 900px;
+    width: 200%;
     height: 3px;
     background: linear-gradient(to right, #ff8e0d, transparent);
     margin-top: 5px;
@@ -391,37 +512,39 @@ a {
 
 .twotag {
     font-style: italic;
-    font-size: 1rem;
-    letter-spacing: 2px;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     margin-top: 5px;
+    white-space: nowrap;
 }
 
 .twodescription {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    max-width: 600px;
-    margin-bottom: 20px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    width: 190%;
+    margin-bottom: 10px;
     color: rgba(255, 255, 255, 0.8);
 }
 
 .twobutton {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 20px;
 }
 
 .twobutton a {
-    padding: 11px 22px;
+    padding: 11px 18px;
     font-weight: bold;
-    font-size: 0.78rem;
-    letter-spacing: 1.5px;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
     border-radius: 4px;
     transition: all 0.3s ease;
     color: #ffffff;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .gotoroadmap2,
@@ -437,158 +560,457 @@ a {
     box-shadow: 0 4px 30px rgba(209, 144, 2, 0.24);
 }
 
-.aerial-2 {
-    height: 430px;
+.img2 {
+    flex: 0 0 550px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    float: right;
-    margin: -450px;
-    margin-left: 950px;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+    max-width: 550px;
+    margin-left: 200px;
 }
 
-.aerial-2 img {
+.img2-bottom-row {
+    display: flex;
+    gap: 12px;
     width: 100%;
-    height: 100%;
+}
+
+.aerial-2 {
+    width: 100%;
+    height: 280px;
     object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    display: block;
+
+}
+
+.aerial-2 {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     display: block;
 }
 
-/*==========================*/
-/*          FOOTER          */
-/*==========================*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: white;
-}
-
-footer {
-    background: linear-gradient(rgba(6, 79, 20, 0.697), rgba(4, 67, 18, 0.588)), url(../footer.png) center/cover no-repeat;
-    background-color: #1a4a2e;
-    padding: 10px 0 0 0;
-    box-shadow: #ffffff;
-}
-
-.container {
-    width: 100%;
-    max-width: 100%;
-    margin: 30;
-    padding: 20px 40px;
+.img2-bottom-row {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items:centers;
-    gap: 50px;
-    text-shadow: #102c1c;
+    gap: 12px;
+    width: 100%;
 }
 
-.footer-content {
-    align-items: center;
-    align-items: flex-start;
+.ccslab,
+.ccsweek {
     flex: 1;
-    min-width: 200px;
-    line-height: 1;
-    text-shadow: #102c1c;
-}
-
-.footer-content h2 {
-    font-size: 30px;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    text-shadow: #102c1c;
-}
-
-.footer-content p {
-    font-size: 20px;
-    font-style: italic;
-    line-height: 1.1;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 18px;
-    text-shadow: #102c1c;
-}
-.contactname span{
-    font-size: small;
-    font-weight: 100;
-}
-.social-link {
-    display: flex;       
-    align-items: center;
-    flex-direction: row;   
-    gap: 10px;            
-    margin-bottom: 5px;    
-    line-height: 1;   
-    padding: 2px 0;     
-}
-
-.icon {
-    width: 20px;          
-    height: 20px;
-    object-fit: contain;
-}
-
-.social-link span {
-    font-size: 15px;     
-    font-family: sans-serif;
-    font-weight: italic;
-}
-
-.footer-list-items {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    list-style: none;
-    padding: 0;
-}
-
-.footer-list-items li {
-    padding: 5px 0;
-    position: relative;
-}
-
-.footer-list-items li::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    transition: width 0.3s ease;
-}
-
-.footer-list-items li:hover::after {
+    min-width: 0;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    display: block;
     width: 100%;
 }
 
-.footer-list-items li a {
-    text-decoration: none;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.85);
-    transition: color 0.3s ease;
+.img2-bottom-row>div {
+    flex: 1;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    min-width: 0;
 }
 
-.footer-list-items li a:hover {
-    color: #ff7700;
+.aerial-2-wrap,
+.ccslab-wrap,
+.ccsweek-wrap {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.img-label {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Kagitingan-Bold';
+    margin: -10px;
     font-weight: bold;
 }
 
-.bottom-bar {
-    background:rgba(44, 2, 2, 0.733);
-    text-align: center;
-    padding: 7px 0;
-    margin-top: 30px;
+/* ============================== */
+/*         THIRD PAGE            */
+/* ============================== */
+
+#ccs {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0 8%;
 }
 
-.bottom-bar p {
-    font-size: 15px;
-    font-style:italic ;
-    color: rgb(255, 247, 247);
+.course-section {
     text-align: center;
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+
+.page3-title {
+    margin-top: 10px;
+    font-size: 3rem;
+
+}
+
+.page3-description {
+    font-size: 1.4rem;
+    letter-spacing: 1.5px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+    place-content: center;
+    border-color: solid black;
+}
+
+/* ── FLIP CARD ── */
+.flip-card {
+    height: 550px;
+    width: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+    display: center;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.65s cubic-bezier(.25, .46, .45, .94);
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    overflow: hidden;
+}
+
+/* ── FRONT ── */
+.flip-front {
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.75) 60%,
+            rgba(0, 0, 0, 0.92) 100%),
+        url("../images/GC1.png") center/cover no-repeat;
+    color: white;
+    justify-content: flex-end;
+    box-shadow: var(--shadow);
+}
+
+
+.flip-card:nth-child(1) .flip-front {
+    background-image:
+        linear-gradient(to bottom, rgba(36, 240, 94, 0.1) 0%, rgba(1, 183, 52, 0.678) 100%),
+        url("../images/BSCS.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.flip-card:nth-child(2) .flip-front {
+    background-image:
+        linear-gradient(to bottom, rgba(36, 240, 94, 0.1) 0%, rgba(1, 183, 52, 0.678) 100%),
+        url("../images/BSEMC.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.flip-card:nth-child(3) .flip-front {
+    background-image:
+        linear-gradient(to bottom, rgba(36, 240, 94, 0.1) 0%, rgba(1, 183, 52, 0.678) 100%),
+        url("../images/BSEMCDAT.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.flip-card:nth-child(4) .flip-front {
+    background-image:
+        linear-gradient(to bottom, rgba(36, 240, 94, 0.1) 0%, rgba(1, 183, 52, 0.678) 100%),
+        url("../images/BSIT.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.flip-front .course-title {
+    font-family: 'Kagitingan-Bold';
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.flip-front .course-tagline {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.flip-front .learnmore-section {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.995);
+    font-style: italic;
+}
+
+.learnmore-section {
+    margin-top: 20px;
+}
+
+/* ── BACK ── */
+.flip-back {
+    background: rgba(0, 98, 28, 0.623);
+    transform: rotateY(180deg);
+    box-shadow: var(--shadow);
+    justify-content: flex-start;
+    gap: 8px;
+    overflow-y: auto;
+}
+
+.listing {
+    margin-left: 20px;
+    font-size: 1rem;
+}
+
+.flip-back h3 {
+    align-content: center;
+    display: center;
+    font-family: 'Kagitingan-Bold';
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    border-bottom: 2px solid rgb(253, 253, 253);
+    padding-bottom: 6px;
+}
+
+.flip-back .course-description {
+    font-size: 1rem;
+    color: #ececec;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.flip-back .course-more {
+    margin-top: auto;
+    font-size: 0.75rem;
+    color: #fafafa;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border: 1px solid #ccd0cd;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.flip-back .course-more:hover {
+    background: #ffffff;
+    color: white;
+}
+
+/* ============================== */
+/*         FOURTH PAGE            */
+/* ============================== */
+
+#roadmap {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0 8%;
+}
+
+.fourthpage {
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 40px;
+
+}
+
+.section4-title {
+    margin-top: 10px;
+    font-size: 3rem;
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+    place-content: center;
+    border-color: solid black;
+}
+
+.card1-section {
+    position: relative;
+    background-image:
+        linear-gradient(to bottom,
+            rgba(10, 80, 30, 0.75) 0%,
+            rgba(5, 50, 20, 0.92) 100%),
+        url("../images/CLASS1.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    height: 570px;
+    width: 320px;
+    padding: 28px 22px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    outline: 1px solid rgba(80, 200, 100, 0.25);
+    outline-offset: 2px;
+}
+
+.first-description {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.88);
+    letter-spacing: 0.3px;
+}
+
+.first-number {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    color: #ff8e0d;
+    font-size: 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Kagitingan-Bold';
+    box-shadow: 0 0 16px rgba(255, 142, 13, 0.3);
+    flex-shrink: 0;
+}
+
+.course-buttons {
+    gap: 10px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.buttontitle {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.btn {
+    width: 100%;
+    padding: 11px;
+    font-family: 'Kagitingan-Bold';
+    font-size: 0.88rem;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(4px);
+    margin-bottom: 10px;
+}
+
+.card1-section .btn:hover {
+    background: rgba(255, 142, 13, 0.55);
+    border-color: #ff8e0d;
+    box-shadow: 0 0 18px rgba(255, 142, 13, 0.35);
+    transform: translateY(-2px);
+
+}
+
+.btn:hover {
+    background: rgba(255, 142, 13, 0.5);
+    border-color: #ff8e0d;
+    box-shadow: 0 0 16px rgba(255, 142, 13, 0.3);
+}
+
+.flow-arrow {
+    width: 100%;
+    margin: 40px;
+    height: 150px;
+}
+
+.admission-card {
+    background-color: rgba(4, 163, 4, 0.777);
+    color: white;
+    justify-content: flex-end;
+    box-shadow: var(--shadow);
+    margin: 5px;
+    height: 550px;
+    width: 300px;
+    padding: 5px;
+    perspective: 1000px;
+    border-radius: 24px;
+    margin-left: 50px;
+}
+
+.step-num {
+    justify-content: flex;
+    font-size: 2rem;
+    position: relative;
+    margin-left: 140px;
+    border-radius: 50%;
+    background: #117f00;
+    box-shadow: 0 0 20px rgba(255, 142, 13, 0.5);
+    color: white;
+    width: 100px;
+    height: 150px;
+}
+
+.admission-desc {
+    text-align: justify;
 }
