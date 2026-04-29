@@ -1014,3 +1014,138 @@ a {
 .admission-desc {
     text-align: justify;
 }
+/*=========================================================*/
+/*                              footer                     */
+/*=========================================================*/
+footer {
+    background: linear-gradient(rgba(4, 49, 13, 0.767), rgba(12, 170, 46, 0.527)), url(../footer.png) center/cover no-repeat;
+    background-color: #1a4a2e;
+    padding: 10px 0 0 0;
+    box-shadow: #03360ab6;
+    box-shadow: 0 4px 30px rgba(3, 46, 3, 0.541);
+
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 30;
+    padding: 0px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: centers;
+    gap: 50px;
+    text-shadow: #102c1c;
+}
+
+.footer-content {
+    align-items: center;
+    align-items: flex-start;
+    flex: 1;
+    min-width: 200px;
+    line-height: 1;
+    text-shadow: #102c1c;
+}
+
+.footer-content h2 {
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-shadow: #102c1c;
+}
+
+.footer-content p {
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.1;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 18px;
+    text-shadow: #102c1c;
+}
+
+.contactname span {
+    font-family: 'Poppins-Medium';
+    font-size: small;
+    font-weight: 300;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 5px;
+    line-height: 1;
+    padding: 2px 0;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.social-link span {
+    font-size: 15px;
+    font-family: 'Poppins-Medium';
+    font-weight: italic;
+}
+
+.footer-list-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list-items li {
+    padding: 5px 0;
+    position: relative;
+}
+
+.footer-list-items li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    transition: width 0.3s ease;
+}
+
+.footer-list-items li:hover::after {
+    width: 100%;
+}
+
+.footer-list-items li a {
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.3s ease;
+}
+
+.footer-list-items li a:hover {
+    color: #ff7700;
+    font-weight: bold;
+}
+
+.bottom-bar {
+    background: rgba(44, 2, 2, 0.808);
+    text-align: center;
+    padding: 7px 0;
+    margin-top: 30px;
+}
+
+.bottom-bar p {
+    font-size: 14px;
+    font-style: normal;
+    color: rgb(255, 247, 247);
+    text-align: center;
+    font-weight: 200;
+}
